@@ -50,5 +50,21 @@
       <span class="phone">+1 234 567 8903</span>
     </li>
   </ul>
+    <script>
+    // Simple JS to add new contact to the list
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const ul = document.getElementById('contactList');
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="name">${name}</span>
+                      <span class="email">${email}</span>
+                      <span class="phone">${phone}</span>`;
+      ul.appendChild(li);
+      this.reset();
+    });
+  </script>
 </body>
 </html>
